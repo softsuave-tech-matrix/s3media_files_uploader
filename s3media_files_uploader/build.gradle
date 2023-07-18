@@ -36,7 +36,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId = 'com.github.softsuave-tech-matrix'
+                groupId = 'softsuave-tech-matrix'
                 artifactId = 's3media_files_uploader'
                 version = '1.0.0'
             }
