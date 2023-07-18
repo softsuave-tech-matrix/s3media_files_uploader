@@ -24,9 +24,9 @@ allprojects {
 ```
 Step 2. Add the dependency
 ```groovy
-dependencies {
-    implementation 'com.softsuave:s3media-file-uploader:v1.0'
-}
+	dependencies {
+	        implementation 'com.github.softsuave-tech-matrix:s3media_files_uploader:1.0.0'
+	}
 ```
  # Usage
 For all kind of media file upload (image/png/jpg/video/mp4/mp3/pdf/doc/apk...etc)
