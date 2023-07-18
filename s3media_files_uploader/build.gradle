@@ -30,7 +30,19 @@ android {
         jvmTarget = '1.8'
     }
 }
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
 
+                groupId = 'com.github.softsuave-tech-matrix'
+                artifactId = 's3media_files_uploader'
+                version = '1.0.0'
+            }
+        }
+    }
+}
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.10.1'
