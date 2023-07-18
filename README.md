@@ -26,6 +26,8 @@ Step 2. Add the dependency
 ```groovy
 	dependencies {
 	        implementation 'com.github.softsuave-tech-matrix:s3media_files_uploader:1.0.0'
+		implementation 'com.amazonaws:aws-android-sdk-s3:2.23.0'
+
 	}
 ```
  # Usage
