@@ -2,15 +2,6 @@
 This is the library for uploading any type of file to amazon S3 bucket for android applications.
 And just onle line code by implementing s3media_files_uploader in any android project.
 
-# Manifest
-
-Go to your manifest and paste it.
-```groovy
-<service
-     android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
-     android:enabled="true" />
-```
-
 # Gradle
 
 Step 1. Add the JitPack repository to your build file
@@ -31,7 +22,7 @@ Step 2. Add the dependency
 	}
 ```
  # Usage
-For all kind of media file upload (image/png/jpg/video/mp4/mp3/pdf/doc/apk...etc)
+For all kinds of media file upload (image/png/jpg/video/mp4/mp3/pdf/doc/apk...etc)
 ```groovy
 public class MainActivity extends AppCompatActivity {
 
