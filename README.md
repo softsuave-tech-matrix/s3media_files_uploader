@@ -1,6 +1,6 @@
 # softsuave-s3_bucket_files_upload
-This is the library for uploading any type of file to amazon S3 bucket for android applications.
-And just onle line code by implementing s3media_files_uploader in any android project.
+This library is for uploading any type of file to Amazon S3 bucket for Android applications. 
+It just requires one line of code for integrating s3media_files_uploader in any Android project.
 
 # Gradle
 
