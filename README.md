@@ -85,3 +85,17 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+## Contributing
+
+Contributions are always welcome! For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## Author
+
+- [@softsuave-tech-matrix](https://github.com/softsuave-tech-matrix)
+
+## Feedback
+
+If you have any feedback, please reach out to us at techmatrix@softsuave.com
