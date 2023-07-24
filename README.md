@@ -16,8 +16,8 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-    //S3 bucket media file uploader
-    implementation 'com.github.softsuave-tech-matrix:s3media_files_uploader:1.0.1'
+    //S3 bucket media files uploader
+    implementation 'com.github.softsuave-tech-matrix:s3media_files_uploader:1.0.2'
     implementation 'com.amazonaws:aws-android-sdk-s3:2.26.0'
 }
 ```
