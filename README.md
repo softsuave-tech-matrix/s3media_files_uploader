@@ -15,20 +15,21 @@ allprojects {
 ```
 Step 2. Add the dependency
 ```groovy
-	dependencies {
-	        implementation 'com.github.softsuave-tech-matrix:s3media_files_uploader:1.0.0'
-		implementation 'com.amazonaws:aws-android-sdk-s3:2.23.0'
-
-	}
+dependencies {
+    //S3 bucket media file uploader
+    implementation 'com.github.softsuave-tech-matrix:s3media_files_uploader:1.0.1'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.26.0'
+}
 ```
  # Usage
+
 For all kinds of media file upload (image/png/jpg/video/mp4/mp3/pdf/doc/apk...etc)
 ```groovy
 public class MainActivity extends AppCompatActivity {
 
     S3MediaUploader s3MediaUploader;
 
-override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bt_upload = findViewById(R.id.bt_upload)
@@ -40,7 +41,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
         }
     }
 
-fun uploadFileToS3(imageUri: Uri?) {
+    fun uploadFileToS3(imageUri: Uri?) {
         val filePath = getFilePathFromURI(imageUri)
         val AWSAccessKeyId: String = "AWSAccessKeyId"
         val SecretAccessKey: String = "SecretAccessKey"
@@ -49,10 +50,11 @@ fun uploadFileToS3(imageUri: Uri?) {
         val regions: Regions = Regions.US_EAST_1
 
         if (filePath != null) {
-            Log.e(TAG, "FilePath:         $filePath")
-            filePath?.let {
-                S3MediaUploader().uploadMediaFile(this,
-                    it,
+            Log.e(TAG, "FilePath: $filePath")
+            filePath?.let { validFilePath ->
+                S3MediaUploader().uploadMediaFile(
+                    this,
+                    validFilePath,
                     AWSAccessKeyId,
                     SecretAccessKey,
                     "sessionToken", // not compulsory
@@ -65,13 +67,8 @@ fun uploadFileToS3(imageUri: Uri?) {
 
                         override fun onUploadCompleted(fileName: String?) {
                             Log.d(TAG, "onUploadCompleted: $fileName ")
-                            val credentials =
-                                BasicAWSCredentials(
-                                    AWSAccessKeyId,
-                                    SecretAccessKey
-                                )
+                            val credentials = BasicAWSCredentials(AWSAccessKeyId, SecretAccessKey)
                             val url = getUrl(bucketName, fileName, credentials)
-
                             Log.d(TAG, "getUrl: $url ")
                         }
 
@@ -79,7 +76,8 @@ fun uploadFileToS3(imageUri: Uri?) {
                             super.onProgressUpdate(id, current)
                             Log.d(TAG, "Progress: $current")
                         }
-                    })
+                    }
+		)
             }
         } else {
             Toast.makeText(this, "Null Path", Toast.LENGTH_SHORT).show()
